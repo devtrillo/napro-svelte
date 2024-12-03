@@ -1,0 +1,16 @@
+{
+  "cSpell.words": [
+    "formsnap",
+    "inlang",
+    "ionos",
+    "napro",
+    "oslojs",
+    "paraglide",
+    "Paraglide",
+    "postgres",
+    "sonner",
+    "superforms",
+    "totp"
+  ],
+  "eslint.validate": ["javascript", "typescript", "svelte"]
+}

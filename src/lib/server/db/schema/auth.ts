@@ -1,22 +1,8 @@
-import dayjs from 'dayjs';
-import {
-  boolean,
-  customType,
-  integer,
-  pgTableCreator,
-  serial,
-  text,
-  timestamp,
-  uniqueIndex,
-} from 'drizzle-orm/pg-core';
+import { relations } from 'drizzle-orm';
+import { boolean, integer, serial, text, timestamp, uniqueIndex } from 'drizzle-orm/pg-core';
 
-const bytea = customType<{ data: Buffer; notNull: false; default: false }>({
-  dataType() {
-    return 'bytea';
-  },
-});
-
-const createTable = pgTableCreator((name: string) => `napro_tech_${name}`);
+import { usersToCycles } from './cycles';
+import { bytea, createTable } from './utils';
 
 export const userTable = createTable(
   'user',
@@ -32,8 +18,12 @@ export const userTable = createTable(
       .defaultNow()
       .$onUpdate(() => new Date().toISOString()),
   },
-  (table) => [{ googleIdIndex: uniqueIndex('google_id_index').on(table.googleId) }],
+  (table) => ({ googleIdIndex: uniqueIndex('google_id_index').on(table.googleId) }),
 );
+
+export const userRelations = relations(userTable, ({ many }) => ({
+  usersToCycles: many(usersToCycles),
+}));
 
 export const sessionTable = createTable('session', {
   createdAt: timestamp('created_at', { mode: 'string' }).notNull().defaultNow(),
@@ -102,9 +92,5 @@ export const totpCredentialTable = createTable('totp_credential', {
 });
 
 export type SecurityKeyCredential = typeof securityKeyCredential.$inferSelect;
-export type User = Omit<typeof userTable.$inferSelect, 'createdAt'> & {
-  createdAt: dayjs.Dayjs;
-};
-export type Session = Omit<typeof sessionTable.$inferSelect, 'expiresAt'> & {
-  expiresAt: dayjs.Dayjs;
-};
+export type User = typeof userTable.$inferSelect;
+export type Session = typeof sessionTable.$inferSelect;

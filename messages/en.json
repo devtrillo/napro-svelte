@@ -1,4 +1,18 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "Hello, {name} from en!"
+  "email": "Email",
+  "password": "Password",
+  "login": "Log in",
+  "name": "Napro",
+  "marketing_hero_title": "Chart your fertility journey",
+  "marketing_features": "Features",
+  "marketing_hero_subtitle": "Empower your family planning with our intuitive Creighton graphing app. Visualize your fertility\n    like never before!",
+  "marketing_hero_cta": "Start Graphing Now",
+  "marketing_why_with_us_title": "Why Graph with Us?",
+  "marketing_why_with_us_reason_0_title": "Precision Tracking",
+  "marketing_why_with_us_reason_0_description": "Our app provides accurate and detailed fertility tracking based on the Creighton Model.",
+  "marketing_why_with_us_reason_1_title": "User-Friendly Interface",
+  "marketing_why_with_us_reason_1_description": "Intuitive design makes it easy to input data and interpret your fertility signs.",
+  "marketing_why_with_us_reason_2_title": "Insightful Analytics",
+  "marketing_why_with_us_reason_2_description": "Gain valuable insights into your reproductive health with our advanced analytics."
 }
