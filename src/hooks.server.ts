@@ -7,10 +7,11 @@ import {
   setSessionTokenCookie,
   validateSessionToken,
 } from '$lib/server/auth/session';
-import { TokenBucket } from '$lib/server/rate-limit';
+import { RefillingTokenBucket } from '$lib/server/rate-limit';
+
 const handleParaglide: Handle = i18n.handle();
 
-const bucket = new TokenBucket<string>(100, 1);
+const bucket = new RefillingTokenBucket<string>(100, 1);
 
 const rateLimitHandle: Handle = async ({ event, resolve }) => {
   // Note: Assumes X-Forwarded-For will always be defined.

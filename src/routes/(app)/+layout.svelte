@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
 
-  import Header from '$lib/features/dashboard/components/header.svelte';
+  import Header from '$lib/features/cycles/components/header.svelte';
 
   import type { LayoutData } from './$types';
 

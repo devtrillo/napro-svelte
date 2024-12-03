@@ -1,7 +1,7 @@
 import { relations } from 'drizzle-orm';
 import { boolean, integer, serial, text, timestamp, uniqueIndex } from 'drizzle-orm/pg-core';
 
-import { usersToCycles } from './cycles';
+import { cycleTable } from './cycles';
 import { bytea, createTable } from './utils';
 
 export const userTable = createTable(
@@ -22,7 +22,7 @@ export const userTable = createTable(
 );
 
 export const userRelations = relations(userTable, ({ many }) => ({
-  usersToCycles: many(usersToCycles),
+  cycles: many(cycleTable),
 }));
 
 export const sessionTable = createTable('session', {

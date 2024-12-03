@@ -53,9 +53,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
     const session = await createSession(sessionToken, existingUser.id);
     setSessionTokenCookie(event, sessionToken, session.expiresAt);
     return new Response(null, {
-      headers: {
-        Location: '/',
-      },
+      headers: { Location: '/' },
       status: 302,
     });
   }
