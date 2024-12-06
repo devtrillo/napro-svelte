@@ -6,4 +6,4 @@ export const bytea = customType<{ data: Buffer; notNull: false; default: false }
   },
 });
 
-export const createTable = pgTableCreator((name: string) => `napro_tech_${name}`);
+export const createTable = pgTableCreator((name: string) => `nt_${name}`);

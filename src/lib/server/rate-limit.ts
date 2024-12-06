@@ -1,3 +1,4 @@
+/* eslint-disable drizzle/enforce-delete-with-where */
 export class RefillingTokenBucket<_Key> {
   public max: number;
   public refillIntervalSeconds: number;

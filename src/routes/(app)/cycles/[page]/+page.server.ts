@@ -9,7 +9,7 @@ export const load: PageServerLoad = async ({ locals, params, parent }) => {
   const page = Number(params.page);
   if (page < 1) return redirect(302, '/cycles/1');
   if (!locals?.user?.id) return redirect(302, '/login');
-
+  console.log(await loadCycles(locals.user.id, page));
   return {
     cycles: loadCycles(locals.user.id, page),
     parent: await parent(),

@@ -1,11 +1,11 @@
 {
-  "id": "c4745029-277e-4790-a72c-e0834ac28c21",
+  "id": "3bc2805f-db17-4e45-837b-0d9f6df4d2bc",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.napro_tech_email_verification": {
-      "name": "napro_tech_email_verification",
+    "public.nt_email_verification": {
+      "name": "nt_email_verification",
       "schema": "",
       "columns": {
         "code": {
@@ -41,12 +41,16 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "napro_tech_email_verification_user_id_napro_tech_user_id_fk": {
-          "name": "napro_tech_email_verification_user_id_napro_tech_user_id_fk",
-          "tableFrom": "napro_tech_email_verification",
-          "tableTo": "napro_tech_user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+        "nt_email_verification_user_id_nt_user_id_fk": {
+          "name": "nt_email_verification_user_id_nt_user_id_fk",
+          "tableFrom": "nt_email_verification",
+          "tableTo": "nt_user",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -54,8 +58,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "public.napro_tech_passkey_credential": {
-      "name": "napro_tech_passkey_credential",
+    "public.nt_passkey_credential": {
+      "name": "nt_passkey_credential",
       "schema": "",
       "columns": {
         "algorithm": {
@@ -98,12 +102,16 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "napro_tech_passkey_credential_user_id_napro_tech_user_id_fk": {
-          "name": "napro_tech_passkey_credential_user_id_napro_tech_user_id_fk",
-          "tableFrom": "napro_tech_passkey_credential",
-          "tableTo": "napro_tech_user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+        "nt_passkey_credential_user_id_nt_user_id_fk": {
+          "name": "nt_passkey_credential_user_id_nt_user_id_fk",
+          "tableFrom": "nt_passkey_credential",
+          "tableTo": "nt_user",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -111,8 +119,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "public.napro_tech_password_reset_session": {
-      "name": "napro_tech_password_reset_session",
+    "public.nt_password_reset_session": {
+      "name": "nt_password_reset_session",
       "schema": "",
       "columns": {
         "code": {
@@ -162,12 +170,16 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "napro_tech_password_reset_session_user_id_napro_tech_user_id_fk": {
-          "name": "napro_tech_password_reset_session_user_id_napro_tech_user_id_fk",
-          "tableFrom": "napro_tech_password_reset_session",
-          "tableTo": "napro_tech_user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+        "nt_password_reset_session_user_id_nt_user_id_fk": {
+          "name": "nt_password_reset_session_user_id_nt_user_id_fk",
+          "tableFrom": "nt_password_reset_session",
+          "tableTo": "nt_user",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -175,8 +187,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "public.napro_tech_security_key_credential": {
-      "name": "napro_tech_security_key_credential",
+    "public.nt_security_key_credential": {
+      "name": "nt_security_key_credential",
       "schema": "",
       "columns": {
         "algorithm": {
@@ -226,12 +238,16 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "napro_tech_security_key_credential_user_id_napro_tech_user_id_fk": {
-          "name": "napro_tech_security_key_credential_user_id_napro_tech_user_id_fk",
-          "tableFrom": "napro_tech_security_key_credential",
-          "tableTo": "napro_tech_user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+        "nt_security_key_credential_user_id_nt_user_id_fk": {
+          "name": "nt_security_key_credential_user_id_nt_user_id_fk",
+          "tableFrom": "nt_security_key_credential",
+          "tableTo": "nt_user",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -239,8 +255,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "public.napro_tech_session": {
-      "name": "napro_tech_session",
+    "public.nt_session": {
+      "name": "nt_session",
       "schema": "",
       "columns": {
         "created_at": {
@@ -278,12 +294,16 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "napro_tech_session_user_id_napro_tech_user_id_fk": {
-          "name": "napro_tech_session_user_id_napro_tech_user_id_fk",
-          "tableFrom": "napro_tech_session",
-          "tableTo": "napro_tech_user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+        "nt_session_user_id_nt_user_id_fk": {
+          "name": "nt_session_user_id_nt_user_id_fk",
+          "tableFrom": "nt_session",
+          "tableTo": "nt_user",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -291,8 +311,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "public.napro_tech_totp_credential": {
-      "name": "napro_tech_totp_credential",
+    "public.nt_totp_credential": {
+      "name": "nt_totp_credential",
       "schema": "",
       "columns": {
         "id": {
@@ -316,12 +336,16 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "napro_tech_totp_credential_user_id_napro_tech_user_id_fk": {
-          "name": "napro_tech_totp_credential_user_id_napro_tech_user_id_fk",
-          "tableFrom": "napro_tech_totp_credential",
-          "tableTo": "napro_tech_user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+        "nt_totp_credential_user_id_nt_user_id_fk": {
+          "name": "nt_totp_credential_user_id_nt_user_id_fk",
+          "tableFrom": "nt_totp_credential",
+          "tableTo": "nt_user",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -329,8 +353,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "public.napro_tech_user": {
-      "name": "napro_tech_user",
+    "public.nt_user": {
+      "name": "nt_user",
       "schema": "",
       "columns": {
         "created_at": {
@@ -398,20 +422,24 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "napro_tech_user_email_unique": {
-          "name": "napro_tech_user_email_unique",
+        "nt_user_email_unique": {
+          "name": "nt_user_email_unique",
           "nullsNotDistinct": false,
-          "columns": ["email"]
+          "columns": [
+            "email"
+          ]
         },
-        "napro_tech_user_google_id_unique": {
-          "name": "napro_tech_user_google_id_unique",
+        "nt_user_google_id_unique": {
+          "name": "nt_user_google_id_unique",
           "nullsNotDistinct": false,
-          "columns": ["google_id"]
+          "columns": [
+            "google_id"
+          ]
         }
       }
     },
-    "public.napro_tech_cycle": {
-      "name": "napro_tech_cycle",
+    "public.nt_cycle": {
+      "name": "nt_cycle",
       "schema": "",
       "columns": {
         "end_date": {
@@ -426,28 +454,24 @@
           "primaryKey": true,
           "notNull": true
         },
+        "ppp": {
+          "name": "ppp",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "score": {
+          "name": "score",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
         "start_date": {
           "name": "start_date",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "public.napro_tech_users_to_cycles": {
-      "name": "napro_tech_users_to_cycles",
-      "schema": "",
-      "columns": {
-        "cycle_id": {
-          "name": "cycle_id",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
         },
         "user_id": {
           "name": "user_id",
@@ -458,29 +482,100 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "napro_tech_users_to_cycles_cycle_id_napro_tech_cycle_id_fk": {
-          "name": "napro_tech_users_to_cycles_cycle_id_napro_tech_cycle_id_fk",
-          "tableFrom": "napro_tech_users_to_cycles",
-          "tableTo": "napro_tech_cycle",
-          "columnsFrom": ["cycle_id"],
-          "columnsTo": ["id"],
+        "nt_cycle_user_id_nt_user_id_fk": {
+          "name": "nt_cycle_user_id_nt_user_id_fk",
+          "tableFrom": "nt_cycle",
+          "tableTo": "nt_user",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.nt_day": {
+      "name": "nt_day",
+      "schema": "",
+      "columns": {
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
         },
-        "napro_tech_users_to_cycles_user_id_napro_tech_user_id_fk": {
-          "name": "napro_tech_users_to_cycles_user_id_napro_tech_user_id_fk",
-          "tableFrom": "napro_tech_users_to_cycles",
-          "tableTo": "napro_tech_user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+        "cycle_id": {
+          "name": "cycle_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "observation_date": {
+          "name": "observation_date",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "discharge_type": {
+          "name": "discharge_type",
+          "type": "varchar(4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "flow_type": {
+          "name": "flow_type",
+          "type": "varchar(4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "frequency": {
+          "name": "frequency",
+          "type": "varchar(4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lubrication_status": {
+          "name": "lubrication_status",
+          "type": "varchar(4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "notes": {
+          "name": "notes",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "nt_day_cycle_id_nt_cycle_id_fk": {
+          "name": "nt_day_cycle_id_nt_cycle_id_fk",
+          "tableFrom": "nt_day",
+          "tableTo": "nt_cycle",
+          "columnsFrom": [
+            "cycle_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {
-        "napro_tech_users_to_cycles_user_id_cycle_id_pk": {
-          "name": "napro_tech_users_to_cycles_user_id_cycle_id_pk",
-          "columns": ["user_id", "cycle_id"]
+        "nt_day_cycle_id_observation_date_pk": {
+          "name": "nt_day_cycle_id_observation_date_pk",
+          "columns": [
+            "cycle_id",
+            "observation_date"
+          ]
         }
       },
       "uniqueConstraints": {}
