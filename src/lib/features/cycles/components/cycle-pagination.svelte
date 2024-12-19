@@ -1,20 +1,21 @@
 <script lang="ts">
+  import { CYCLE_LIMIT_FETCH } from '../CONSTANT';
+
   const {
     total,
-    pageSize,
     currentPage,
   }: {
     total: number;
-    pageSize: number;
     currentPage: number;
   } = $props();
 
-  const arr = $derived(Array.from({ length: Math.ceil(total / pageSize) }, (_, i) => i));
+  const arr = $derived(Array.from({ length: Math.ceil(total / CYCLE_LIMIT_FETCH) }, (_, i) => i));
+  $effect(() => console.log(currentPage));
 </script>
 
-<div class="pagination">
+<div class="flex w-full items-center justify-center gap-x-5">
   {#each arr as idx}
-    <a href="/cycles/{idx + 1}" class={currentPage === idx ? 'text-emerald-300' : ''}>
+    <a href={`/cycles?page=${idx + 1}`} class={currentPage === idx ? 'text-emerald-300' : ''}>
       {idx + 1}
     </a>
   {/each}

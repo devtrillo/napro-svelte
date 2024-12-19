@@ -9,9 +9,7 @@
 
   const { data }: { data: PageServerData } = $props();
 
-  const pageSize = 10;
-
-  let currentPage = $derived(Number($page.params.page) - 1);
+  let currentPage = $derived(Number($page.url.searchParams.get('page') || '1') - 1);
 </script>
 
 <WelcomeCard name={data.parent.name} />
@@ -33,6 +31,6 @@
   {/await}
 
   {#await data.totalCycles then total}
-    <CyclePagination {total} {pageSize} {currentPage} />
+    <CyclePagination {total} {currentPage} />
   {/await}
 </div>

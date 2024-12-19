@@ -31,7 +31,7 @@ export const dayTable = createTable(
     cycleId: integer('cycle_id')
       .references(() => cycleTable.id, { onDelete: 'cascade' })
       .notNull(),
-    date: timestamp('observation_date', { mode: 'string' }).notNull(),
+    date: varchar('observation_date', { length: 10 }).notNull(),
     dischargeType: varchar('discharge_type', { length: 4 }).notNull(),
     flowType: varchar('flow_type', { length: 4 }).notNull(),
     frequency: varchar('frequency', { length: 4 }).notNull(),

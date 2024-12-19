@@ -1,7 +1,7 @@
 <script lang="ts">
   import dayjs from 'dayjs';
   import localizedFormat from 'dayjs/plugin/localizedFormat';
-  import SuperDebug, { superForm } from 'sveltekit-superforms';
+  import { superForm } from 'sveltekit-superforms';
   import { zodClient } from 'sveltekit-superforms/adapters';
 
   import * as Form from '$lib/components/ui/form';
@@ -53,16 +53,14 @@
   );
 
   const form = superForm(data.form, {
+    resetForm: false,
     taintedMessage: () => {
       return confirm("You haven't saved the form. Are you sure you want to leave?");
     },
     validators: zodClient(insertObservationSchema),
   });
 
-  const { form: formData, enhance, submitting, allErrors } = form;
-  $effect(() => {
-    console.log($allErrors);
-  });
+  const { form: formData, enhance, submitting } = form;
 
   const flowTypes = {
     H: 'Heavy flow',
@@ -131,7 +129,11 @@
 
       <Form.Fieldset {form} name="flowType" class="space-y-3">
         <Form.Legend>Flow Type</Form.Legend>
-        <RadioGroup.Root bind:value={$formData.flowType} class="grid grid-cols-2 gap-4" name="type">
+        <RadioGroup.Root
+          bind:value={$formData.flowType}
+          class="grid grid-cols-2 gap-4"
+          name="flowType"
+        >
           {#each Object.entries(flowTypes) as [value, label]}
             <Form.Control>
               {#snippet children({ props })}
@@ -179,7 +181,7 @@
         <RadioGroup.Root
           bind:value={$formData.lubricationStatus}
           class="grid grid-cols-2 gap-4"
-          name="type"
+          name="lubricationStatus"
         >
           {#each Object.entries(lubricationStatus) as [value, label]}
             <Form.Control>
@@ -199,7 +201,7 @@
         <RadioGroup.Root
           bind:value={$formData.frequency}
           class="grid grid-cols-2 gap-4"
-          name="type"
+          name="frequency"
         >
           {#each Object.entries(observationFrequency) as [value, label]}
             <Form.Control>
@@ -229,7 +231,6 @@
         <Form.FieldErrors />
       </Form.Field>
       <Form.Button type="submit" disabled={$submitting}>Submit</Form.Button>
-      <SuperDebug data={$formData} />
     </form>
   </Card.Content>
 </Card.Root>

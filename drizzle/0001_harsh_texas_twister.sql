@@ -1,0 +1,1 @@
+ALTER TABLE "nt_day" ALTER COLUMN "observation_date" SET DATA TYPE varchar(10);
