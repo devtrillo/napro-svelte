@@ -53,7 +53,7 @@
 
     <div class="mx-auto flex w-fit items-center rounded-lg border px-3 py-2.5 text-xs">
       <span class="text-muted-foreground">New features and improvements!</span>
-      <a class="ml-2 flex items-center font-semibold hover:underline" href="#">
+      <a class="ml-2 flex items-center font-semibold hover:underline" href="/">
         v1.2.1
         <ZapIcon class="size-3.5" />
       </a>
