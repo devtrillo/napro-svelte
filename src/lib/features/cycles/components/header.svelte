@@ -2,8 +2,9 @@
   import { page } from '$app/stores';
   import * as Avatar from '$lib/components/ui/avatar';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+  import type { User } from '$lib/server/db/schema';
 
-  let { user }: { user: any } = $props();
+  let { user }: { user: User } = $props();
 </script>
 
 <header class=" mb-5 flex w-full bg-background/95 py-2 shadow-xl">

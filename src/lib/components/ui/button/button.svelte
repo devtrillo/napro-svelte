@@ -53,13 +53,13 @@
 </script>
 
 {#if href}
-  <a bind:this={ref} class={cn(buttonVariants({ className, size, variant }))} {href} {...restProps}>
+  <a bind:this={ref} class={cn(buttonVariants({ size, variant }), className)} {href} {...restProps}>
     {@render children?.()}
   </a>
 {:else}
   <button
     bind:this={ref}
-    class={cn(buttonVariants({ className, size, variant }))}
+    class={cn(buttonVariants({ size, variant }), className)}
     {type}
     {...restProps}
   >
